@@ -11,7 +11,7 @@
                     active-class="active"
                     :class="{ active: isMatch(nav.path) }"
                     class="nav-link">
-                        {{nav.name}} 
+                    {{ nav.name }} 
                 </RouterLink>
             </div>
         </div>
@@ -58,9 +58,12 @@ export default {
     },
     methods: {
         isMatch(path) {
-            if(!path) return false
+            if(!path){
+                return false
+            }else {
             console.log(this.$route)
-            return path.test(this.$route.fullpath)
+            return path.test(this.$route.fullPath)
+            } 
         },
         toAbout() {
             console.log('!!!')
